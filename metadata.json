@@ -1,0 +1,9 @@
+{
+  "uuid": "Knotifly@godd0t",
+  "name": "Knotifly",
+  "description": "Calm, compact notification banners for GNOME Shell.",
+  "shell-version": ["50"],
+  "settings-schema": "org.gnome.shell.extensions.knotifly",
+  "gettext-domain": "knotifly",
+  "version": 1
+}

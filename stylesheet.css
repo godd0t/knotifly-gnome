@@ -1,0 +1,195 @@
+/* SPDX-License-Identifier: GPL-3.0-or-later */
+
+.knotifly-banner-bin {
+  padding-top: 10px;
+}
+
+.knotifly-queue-cue {
+  width: 24em;
+  min-height: 28px;
+  margin: 0 12px 8px;
+  padding: 3px 12px;
+  border-radius: 0 0 12px 12px;
+  font-size: 0.82em;
+  font-weight: 600;
+}
+
+.knotifly-light .knotifly-queue-cue {
+  color: rgb(28, 84, 142);
+  background-color: rgba(227, 240, 252, 0.98);
+}
+
+.knotifly-dark .knotifly-queue-cue {
+  color: rgb(190, 221, 255);
+  background-color: rgba(39, 64, 91, 0.98);
+}
+
+.knotifly-light .knotifly-queue-cue:hover,
+.knotifly-light .knotifly-queue-cue:focus {
+  background-color: rgb(210, 231, 250);
+}
+
+.knotifly-dark .knotifly-queue-cue:hover,
+.knotifly-dark .knotifly-queue-cue:focus {
+  background-color: rgb(51, 80, 111);
+}
+
+.knotifly-position-top-left .knotifly-banner-bin {
+  padding-left: 8px;
+}
+
+.knotifly-position-top-right .knotifly-banner-bin {
+  padding-right: 8px;
+}
+
+.knotifly-banner {
+  width: 28em;
+  min-height: 60px;
+  margin: 6px 6px 0;
+  border-radius: 16px;
+  border: 2px solid transparent;
+  box-shadow: 0 6px 20px 3px rgba(0, 0, 0, 0.26);
+}
+
+.knotifly-light .knotifly-banner {
+  color: rgba(22, 22, 24, 0.96);
+  background-color: rgba(250, 250, 252, 0.98);
+}
+
+.knotifly-dark .knotifly-banner {
+  color: rgba(250, 250, 252, 0.96);
+  background-color: rgba(38, 39, 43, 0.98);
+}
+
+.knotifly-light .knotifly-banner.knotifly-actionable {
+  background-color: rgb(244, 249, 254);
+}
+
+.knotifly-dark .knotifly-banner.knotifly-actionable {
+  background-color: rgb(34, 43, 53);
+}
+
+.knotifly-light .knotifly-banner.knotifly-critical {
+  background-color: rgb(255, 246, 235);
+}
+
+.knotifly-dark .knotifly-banner.knotifly-critical {
+  background-color: rgb(57, 42, 31);
+}
+
+.knotifly-light .knotifly-banner:focus {
+  border-color: rgba(28, 113, 216, 0.9);
+}
+
+.knotifly-dark .knotifly-banner:focus {
+  border-color: rgba(120, 183, 250, 0.95);
+}
+
+.knotifly-banner .message-header {
+  padding: 0 5px;
+}
+
+.knotifly-banner .message-header-content {
+  min-height: 20px;
+  padding-bottom: 4px;
+  spacing: 6px;
+}
+
+.knotifly-banner .message-source-icon {
+  icon-size: 14px;
+}
+
+.knotifly-banner .message-source-title,
+.knotifly-banner .message-title {
+  font-weight: 600;
+}
+
+.knotifly-light .knotifly-banner .message-source-title,
+.knotifly-light .knotifly-banner .event-time,
+.knotifly-light .knotifly-banner .message-source-icon,
+.knotifly-light .knotifly-banner .message-expand-button,
+.knotifly-light .knotifly-banner .message-close-button {
+  color: rgba(22, 22, 24, 0.68);
+}
+
+.knotifly-dark .knotifly-banner .message-source-title,
+.knotifly-dark .knotifly-banner .event-time,
+.knotifly-dark .knotifly-banner .message-source-icon,
+.knotifly-dark .knotifly-banner .message-expand-button,
+.knotifly-dark .knotifly-banner .message-close-button {
+  color: rgba(250, 250, 252, 0.72);
+}
+
+.knotifly-banner .message-box {
+  padding: 5px;
+  spacing: 7px;
+}
+
+.knotifly-banner .message-icon {
+  icon-size: 40px;
+}
+
+.knotifly-banner .message-icon.message-themed-icon {
+  icon-size: 18px;
+  min-width: 40px;
+  min-height: 40px;
+}
+
+.knotifly-banner .message-content {
+  spacing: 3px;
+}
+
+.knotifly-banner .message-expand-button,
+.knotifly-banner .message-close-button {
+  padding: 5px;
+}
+
+.knotifly-banner .notification-button {
+  min-height: 34px;
+  margin-top: 4px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.knotifly-light .knotifly-banner .notification-button,
+.knotifly-light .knotifly-banner .message-expand-button:hover,
+.knotifly-light .knotifly-banner .message-close-button:hover {
+  color: rgb(24, 82, 143);
+  background-color: rgba(28, 113, 216, 0.10);
+}
+
+.knotifly-dark .knotifly-banner .notification-button,
+.knotifly-dark .knotifly-banner .message-expand-button:hover,
+.knotifly-dark .knotifly-banner .message-close-button:hover {
+  color: rgb(190, 221, 255);
+  background-color: rgba(120, 183, 250, 0.14);
+}
+
+.knotifly-light .knotifly-banner .notification-button:hover,
+.knotifly-light .knotifly-banner .notification-button:focus {
+  background-color: rgba(28, 113, 216, 0.18);
+}
+
+.knotifly-dark .knotifly-banner .notification-button:hover,
+.knotifly-dark .knotifly-banner .notification-button:focus {
+  background-color: rgba(120, 183, 250, 0.24);
+}
+
+.knotifly-compact .knotifly-banner {
+  padding: 6px;
+}
+
+.knotifly-comfortable .knotifly-banner {
+  width: 30em;
+  min-height: 68px;
+  padding: 10px;
+}
+
+.knotifly-comfortable .knotifly-banner .message-box {
+  padding: 7px;
+  spacing: 9px;
+}
+
+.knotifly-comfortable .knotifly-banner .message-icon {
+  icon-size: 44px;
+}

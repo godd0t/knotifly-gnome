@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.knotifly"
+          path="/org/gnome/shell/extensions/knotifly/">
+    <key name="display-duration-ms" type="i">
+      <range min="1500" max="10000"/>
+      <default>2500</default>
+      <summary>Banner display duration</summary>
+      <description>How long noncritical notification banners remain visible, in milliseconds.</description>
+    </key>
+    <key name="density" type="s">
+      <choices>
+        <choice value="compact"/>
+        <choice value="comfortable"/>
+      </choices>
+      <default>'compact'</default>
+      <summary>Banner density</summary>
+      <description>The spacing and size preset used by notification banners.</description>
+    </key>
+    <key name="appearance" type="s">
+      <choices>
+        <choice value="auto"/>
+        <choice value="light"/>
+        <choice value="dark"/>
+      </choices>
+      <default>'auto'</default>
+      <summary>Banner appearance</summary>
+      <description>Whether banners follow the desktop color scheme or force a light or dark appearance.</description>
+    </key>
+    <key name="position" type="s">
+      <choices>
+        <choice value="top-left"/>
+        <choice value="top-center"/>
+        <choice value="top-right"/>
+      </choices>
+      <default>'top-center'</default>
+      <summary>Banner position</summary>
+      <description>Where notification banners appear on the primary display.</description>
+    </key>
+    <key name="interruption-mode" type="s">
+      <choices>
+        <choice value="calm"/>
+        <choice value="balanced"/>
+        <choice value="immediate"/>
+      </choices>
+      <default>'balanced'</default>
+      <summary>Interruption mode</summary>
+      <description>How quickly queued noncritical notifications are shown.</description>
+    </key>
+    <key name="click-to-expand" type="b">
+      <default>true</default>
+      <summary>Require a click to expand</summary>
+      <description>When enabled, hovering pauses the banner timer without expanding its details.</description>
+    </key>
+    <key name="auto-expand-actions" type="b">
+      <default>true</default>
+      <summary>Show quick actions immediately</summary>
+      <description>Whether notifications with application-provided actions open with those controls visible.</description>
+    </key>
+  </schema>
+</schemalist>

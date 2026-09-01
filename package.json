@@ -1,0 +1,16 @@
+{
+  "name": "knotifly-gnome-extension",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Calm, compact notification banners for GNOME Shell 50",
+  "scripts": {
+    "lint": "eslint extension.js prefs.js bannerManager.js tests",
+    "validate": "glib-compile-schemas --strict --dry-run schemas",
+    "pack": "make pack",
+    "test": "make test"
+  },
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "eslint": "^10.8.1"
+  }
+}
