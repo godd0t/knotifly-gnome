@@ -4,7 +4,7 @@ Knotifly gives GNOME Shell 50 calmer, compact notification banners while
 leaving notification history, application actions, sounds, privacy, and
 per-application controls to GNOME.
 
-The first release targets Ubuntu 26.04 with GNOME Shell 50. It intentionally
+Version 1 targets Ubuntu 26.04 with GNOME Shell 50. It intentionally
 does not change notifications in the clock/calendar menu or on the lock screen.
 
 ## What it changes
@@ -57,8 +57,7 @@ Open preferences with:
 gnome-extensions prefs Knotifly@godd0t
 ```
 
-Preferences are grouped into Behavior (duration, position, interruption mode,
-and expansion) and Appearance (density and color scheme).
+Preferences are grouped into Delivery, Interaction, and Appearance.
 
 The packaged extension is written to
 `dist/Knotifly@godd0t.shell-extension.zip`.
@@ -96,11 +95,26 @@ Press `Super+N` while a banner is active to focus and expand it.
 ## Development checks
 
 ```sh
-make lint
-make validate
-make test
-make smoke
+make check       # lint, schema, settings test, and package
+make smoke       # run the extension in a headless GNOME Shell
+make screenshot  # save the smoke state to /tmp/knotifly-smoke.png
+make release     # clean build plus the full smoke test
 ```
+
+Useful desktop shortcuts:
+
+```sh
+make reload           # rebuild, reinstall, and re-enable
+make status
+make prefs
+make notify
+make notify-critical
+make notify-actions
+make logs
+```
+
+Run `make help` for the compact command list. Override the screenshot path with
+`make screenshot SCREENSHOT=/path/to/knotifly.png`.
 
 The smoke test starts a temporary headless GNOME Shell and isolated D-Bus
 session. Final visual checks should still be performed in a real Wayland

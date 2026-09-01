@@ -284,10 +284,11 @@ export class BannerManager {
             if (this._active?.notification === notification)
                 this._hide(false);
         });
-        notification.connectObject('action-added', () => {
-            banner.add_style_class_name('knotifly-actionable');
-            this._syncExpansion();
-        }, banner);
+        notification.connectObject(
+            'action-added', () => this._syncActionState(),
+            'action-removed', () => this._syncActionState(),
+            banner
+        );
 
         this._active = {notification, banner, destroyId, hiding: false};
         this._bannerBin.insert_child_at_index(banner, 0);
@@ -563,7 +564,7 @@ export class BannerManager {
             this._pauseTimeout();
             if (this._bannerBin.hover &&
                 !this._settings.get_boolean('click-to-expand'))
-                this._active.banner.expand(true);
+                this._active.banner.expand(this._animationsEnabled);
         } else {
             this._resumeTimeout();
         }
@@ -583,6 +584,18 @@ export class BannerManager {
             banner.expand(animate && this._animationsEnabled);
         else if (banner.expanded)
             banner.unexpand(animate && this._animationsEnabled);
+    }
+
+    _syncActionState() {
+        if (!this._active || this._active.hiding)
+            return;
+
+        const {banner, notification} = this._active;
+        if (notification.actions.length > 0)
+            banner.add_style_class_name('knotifly-actionable');
+        else
+            banner.remove_style_class_name('knotifly-actionable');
+        this._syncExpansion();
     }
 
     _syncAnimationState() {

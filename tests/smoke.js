@@ -42,7 +42,7 @@ export async function run() {
         body: 'The custom banner manager exposes useful actions.',
         isTransient: true,
     });
-    actionNotification.addAction('Open', () => {});
+    const openAction = actionNotification.addAction('Open', () => {});
     source.addNotification(actionNotification);
     Main.notify('Knotifly queued item', 'The queue cue should appear.');
     Main.notify('Knotifly another item', 'The queue cue should count waiting items.');
@@ -93,6 +93,15 @@ export async function run() {
         await new Shell.Screenshot().screenshot(false, stream);
         stream.close(null);
     }
+
+    actionNotification.removeAction(openAction);
+    await new Promise(resolve => {
+        GLib.timeout_add_once(GLib.PRIORITY_DEFAULT, 250, resolve);
+    });
+    if (banner.has_style_class_name('knotifly-actionable'))
+        throw new Error('A banner without actions remained actionable');
+    if (banner.expanded)
+        throw new Error('A banner without actions remained expanded');
 
     queueCue.emit('clicked', Clutter.BUTTON_PRIMARY);
     await new Promise(resolve => {
