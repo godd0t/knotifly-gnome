@@ -1,2 +1,7 @@
 dist/
 schemas/gschemas.compiled
+AGENTS.md
+DESIGN.md
+.codex
+.impeccable
+.idea
